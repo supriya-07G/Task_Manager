@@ -1,4 +1,3 @@
-/* script.js - Interactive To-Do List with LocalStorage, Filters, Search, Dark Mode, Progress Bar */
 
 // State
 const state = {
@@ -6,7 +5,6 @@ const state = {
   filter: "all",
   search: ""
 };
-
 // DOM elements
 const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
@@ -18,13 +16,11 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const themeToggle = document.getElementById('theme-toggle');
 const progressBar = document.getElementById('progress-bar');
 const clearCompletedBtn = document.getElementById('clear-completed');
-
 // Load theme
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
   themeToggle.textContent = "☀️ Light Mode";
 }
-
 // Theme toggle
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
@@ -41,7 +37,6 @@ function loadTasks() {
 function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(state.tasks));
 }
-
 // Add task
 taskForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -55,13 +50,11 @@ taskForm.addEventListener('submit', (e) => {
   taskInput.value = '';
   render();
 });
-
 // Search
 searchInput.addEventListener('input', (e) => {
   state.search = e.target.value.toLowerCase();
   render();
 });
-
 // Filters
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -71,7 +64,6 @@ filterBtns.forEach(btn => {
     render();
   });
 });
-
 // Clear Completed
 clearCompletedBtn.addEventListener('click', () => {
   state.tasks = state.tasks.filter(t => !t.completed);
@@ -200,3 +192,4 @@ function removeTask(id) {
 /* ---------- Init ---------- */
 loadTasks();
 render();
+
