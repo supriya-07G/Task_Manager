@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla JS To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>✅ To-Do List</h1>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button id="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Task Form -->
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Enter new task..." required />
+      <button type="submit">Add</button>
+    </form>
+
+    <!-- Search + Filters -->
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Search tasks..." />
+      <div class="filters">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="pending" class="filter-btn">Pending</button>
+        <button data-filter="completed" class="filter-btn">Completed</button>
+      </div>
+    </div>
+
+    <!-- Counts -->
+    <div class="counts">
+      <span>Pending: <span id="count-pending">0</span></span>
+      <span>Completed: <span id="count-completed">0</span></span>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Clear Completed -->
+    <button id="clear-completed" class="clear-btn">🗑️ Clear Completed</button>
+
+    <!-- Task List -->
+    <ul id="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
