@@ -15,4 +15,4 @@ This project is built to practice clean code, productivity tools, and project ma
 
 ---
 
-## 📂 Project Structure
+
